@@ -530,7 +530,7 @@ else ifeq ($(WINDOW_API),SDL2)
   else ifneq ($(TARGET_RPI)$(TARGET_SWITCH),00)
     BACKEND_LDFLAGS += -lGLESv2
   else ifeq ($(OSX_BUILD),1)
-    BACKEND_LDFLAGS += -framework OpenGL $(shell pkg-config --libs glew)
+    BACKEND_LDFLAGS += -framework OpenGL $(shell pkg-config --libs glew) -ld_classic
   else
     BACKEND_LDFLAGS += -lGL
   endif
